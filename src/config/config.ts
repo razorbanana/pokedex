@@ -1,6 +1,8 @@
 interface Config {
     USER_NAME: string,
-    EVENT_NAMES: typeof EventNames
+    EVENT_NAMES: typeof EventNames,
+    INPUT_TYPES: typeof InputTypes,
+    CATEGORIES: typeof Categories
 }
 
 export enum EventNames {
@@ -8,10 +10,22 @@ export enum EventNames {
   UPDATE_POKEMON = 'update_pokemon',
 }
 
+enum InputTypes {
+    SELECT_INPUT = 'select',
+    SEARCH_INPUT = 'search'
+}
+
+export enum Categories {
+    GENERAL = 'general',
+    ABILITIES = 'abilities'
+}
+
 const Config = function():Config{
     return {
         USER_NAME: "POKEUSER",
-        EVENT_NAMES: EventNames
+        EVENT_NAMES: EventNames,
+        INPUT_TYPES: InputTypes,
+        CATEGORIES: Categories
     }
 }
 

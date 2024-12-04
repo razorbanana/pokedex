@@ -2,7 +2,7 @@ import type {EventNames} from "../config/config"
 
 interface Observer {
     subscribe: (name: EventNames, action: Action) => void,
-    unsubscribe: (name: EventNames, action:Action) => void,
+    unsubscribe: (name: EventNames, action: Action) => void,
     emit: (name: EventNames, data?: unknown) => void,
 }
 
