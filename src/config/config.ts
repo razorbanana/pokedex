@@ -10,7 +10,7 @@ export enum EventNames {
   UPDATE_POKEMON = 'update_pokemon',
 }
 
-enum InputTypes {
+export enum InputTypes {
     SELECT_INPUT = 'select',
     SEARCH_INPUT = 'search'
 }

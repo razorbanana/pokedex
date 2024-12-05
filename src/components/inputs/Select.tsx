@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-const Select:FC<{onChange: React.ChangeEventHandler<HTMLSelectElement>, options: string[]}> = ({onChange, options}) => {
+const Select:FC<{value: string,onChange: React.ChangeEventHandler<HTMLSelectElement>, options: string[]}> = ({value, onChange, options}) => {
     return (
-        <select onChange={onChange}>
-            {options.map(option => <option value={option}></option>)}
+        <select value={value} onChange={onChange}>
+            {options.map((option, id) => <option value={option} key={id}>{option}</option>)}
         </select>
     )
 }

@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from "react"
-import Input from "./Input"
-import observer from "../observers/observer"
-import config, { Categories } from "../config/config"
+import observer from "../../observers/observer"
+import config, { Categories } from "../../config/config"
+import Select from "../inputs/Select"
+import PokemonSearch from "./PokemonSearch"
 
 const Header:FC = () => {
     const [category, setCategory] = useState("general")
@@ -16,14 +17,8 @@ const Header:FC = () => {
     }, [])
     return (
         <div>
-            {category}
-            {/*
-                Component for view select
-            */}
-            <Input type="select" onChange={categoryChange} />
-            {/*
-                Component for pokemon search
-            */}
+            <Select value={category} onChange={categoryChange} options={Object.values(config.CATEGORIES)}/>
+            <PokemonSearch />
         </div>
     )
 }
