@@ -2,7 +2,8 @@ interface Config {
     USER_NAME: string,
     EVENT_NAMES: typeof EventNames,
     INPUT_TYPES: typeof InputTypes,
-    CATEGORIES: typeof Categories
+    CATEGORIES: typeof Categories,
+    DISCOVERY: boolean
 }
 
 export enum EventNames {
@@ -25,7 +26,8 @@ const Config = function():Config{
         USER_NAME: "POKEUSER",
         EVENT_NAMES: EventNames,
         INPUT_TYPES: InputTypes,
-        CATEGORIES: Categories
+        CATEGORIES: Categories,
+        DISCOVERY: import.meta.env.VITE_DISCOVERY === "true" 
     }
 }
 
