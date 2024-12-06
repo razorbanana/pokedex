@@ -3,7 +3,9 @@ interface Config {
     EVENT_NAMES: typeof EventNames,
     INPUT_TYPES: typeof InputTypes,
     CATEGORIES: typeof Categories,
-    DISCOVERY: boolean
+    DISCOVERY: boolean,
+    BASE_API_URL: string,
+    POKEMON_CACHE_NAME: string
 }
 
 export enum EventNames {
@@ -27,7 +29,9 @@ const Config = function():Config{
         EVENT_NAMES: EventNames,
         INPUT_TYPES: InputTypes,
         CATEGORIES: Categories,
-        DISCOVERY: import.meta.env.VITE_DISCOVERY === "true" 
+        DISCOVERY: import.meta.env.VITE_DISCOVERY === "true",
+        BASE_API_URL: import.meta.env.VITE_BASE_URL,
+        POKEMON_CACHE_NAME: import.meta.env.VITE_POKEMON_CACHE_NAME
     }
 }
 

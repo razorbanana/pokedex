@@ -9,9 +9,10 @@ const CategorySelect:FC = () => {
         observer.emit(config.EVENT_NAMES.UPDATE_CATEGORY, e.target.value)
     }
     useEffect(() => {
-        observer.subscribe(config.EVENT_NAMES.UPDATE_CATEGORY, (data: unknown) => setCategory(data as Categories))
+        const action = (data: unknown) => setCategory(data as Categories)
+        observer.subscribe(config.EVENT_NAMES.UPDATE_CATEGORY, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.UPDATE_CATEGORY, (data: unknown) => setCategory(data as Categories))
+            observer.unsubscribe(config.EVENT_NAMES.UPDATE_CATEGORY, action)
         }
     }, [])
     return (
