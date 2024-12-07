@@ -5,7 +5,6 @@ import config from './config/config'
 import Discovery from './dev/Discovery'
 
 function App() {
-  console.log(config.DISCOVERY)
   if (config.DISCOVERY){
     return (<Discovery />)
   }

@@ -5,7 +5,9 @@ interface Config {
     CATEGORIES: typeof Categories,
     DISCOVERY: boolean,
     BASE_API_URL: string,
-    POKEMON_CACHE_NAME: string
+    POKEMON_CACHE_NAME: string,
+    POKEMON_ENDPOINT: string,
+    POKEMON_LIST_LIMIT: number
 }
 
 export enum EventNames {
@@ -31,7 +33,9 @@ const Config = function():Config{
         CATEGORIES: Categories,
         DISCOVERY: import.meta.env.VITE_DISCOVERY === "true",
         BASE_API_URL: import.meta.env.VITE_BASE_URL,
-        POKEMON_CACHE_NAME: import.meta.env.VITE_POKEMON_CACHE_NAME
+        POKEMON_CACHE_NAME: import.meta.env.VITE_POKEMON_CACHE_NAME,
+        POKEMON_ENDPOINT: import.meta.env.VITE_POKEMON_ENDPOINT,
+        POKEMON_LIST_LIMIT: import.meta.env.VITE_POKEMON_LIST_LIMIT || 20
     }
 }
 

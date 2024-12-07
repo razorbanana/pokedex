@@ -5,11 +5,14 @@ import Header from "../components/header/Header"
 import Body from "../components/Body"
 import General from "../components/views/general/General"
 import PokemonData from "../components/views/general/PokemonData"
+import SillyButtons from "./sillybuttons/SillyButtons"
 
 const Discovery:FC = () => {
     return (
         <div>
             <h1>Discovery Component</h1>
+            <h2>Silly Buttons</h2>
+            <SillyButtons />
             <h2>Header</h2>
             <Header />
             <h2>Pokemon Search</h2>

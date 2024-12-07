@@ -4,7 +4,6 @@ import config from "../../../config/config"
 
 const PokemonData:FC = () => {
     const [pokemon, setPokemon] = useState<object>({})
-    console.log(pokemon)
     useEffect(()=> {
         const action = (data:unknown) => setPokemon(data as object)
         observer.subscribe(config.EVENT_NAMES.UPDATE_POKEMON, action)
@@ -14,7 +13,7 @@ const PokemonData:FC = () => {
     }, [])
     return (
         <div>
-            
+            {JSON.stringify(pokemon)}
         </div>
     )
 }
