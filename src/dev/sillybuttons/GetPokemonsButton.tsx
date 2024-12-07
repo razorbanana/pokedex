@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
-import { getPokemonList } from "../../api/pokemonAPI";
+import { fetchPokemonNameList } from "../../api/pokemonAPI";
 
 const GetPokemonsButton:FC = () => {
     const [offset, setOffset] = useState(0)
     const onClickGetPokemonList = async () => {
-        const response = await getPokemonList(offset)
+        const response = await fetchPokemonNameList(offset)
         console.log(response)
     }
     return (
