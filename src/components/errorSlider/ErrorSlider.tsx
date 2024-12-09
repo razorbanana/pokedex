@@ -9,7 +9,7 @@ const ErrorSlider:FC = () => {
     useEffect(() => {
         const action = (data:unknown) => {
             setError(data as string)
-            setTimeout(()=>setError(""), 2500)
+            setTimeout(()=>setError(""), config.ERROR_SLIDER_TIMEOUT)
         }
         observer.subscribe(config.EVENT_NAMES.SHOW_ERROR, action)
         return () => {

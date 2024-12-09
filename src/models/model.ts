@@ -16,6 +16,7 @@ const Model = function():Model{
     const fetchPokemonList = async ():Promise<void> => {
         const pokemons = await fetchPokemonNameList()
         pokemonList.push(...pokemons)
+        observer.emit(config.EVENT_NAMES.POKEMON_LIST_FETCHED, pokemons)
     }
 
     const updatePokemonData = async (name:string):Promise<void> => {

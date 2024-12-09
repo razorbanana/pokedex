@@ -8,6 +8,7 @@ import General from "../components/views/general/General"
 import PokemonData from "../components/views/general/PokemonData"
 import SillyButtons from "./sillybuttons/SillyButtons"
 import ErrorSlider from "../components/errorSlider/ErrorSlider"
+import PokemonList from "../components/views/pokemonList/PokemonList"
 
 const Discovery:FC = () => {
     return (
@@ -28,7 +29,8 @@ const Discovery:FC = () => {
             <General />
             <h2>PokemonData</h2>
             <PokemonData />
-            
+            <h2>Pokemon List</h2>
+            <PokemonList />
         </div>
     )
 }

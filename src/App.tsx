@@ -5,12 +5,12 @@ import Footer from './components/Footer'
 import Header from './components/header/Header'
 import config from './config/config'
 import Discovery from './dev/Discovery'
-import model from './models/model'
 import ErrorSlider from './components/errorSlider/ErrorSlider'
+import controller from "./controller/controller"
 
 function App() {
   useEffect(()=> {
-    model.fetchPokemonList()
+    controller.fetchPokemons()
   }, [])
   if (config.DISCOVERY){
     return (

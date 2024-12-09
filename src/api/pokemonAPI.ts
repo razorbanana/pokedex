@@ -12,5 +12,5 @@ export const fetchPokemonNameList = async (limit:number=config.POKEMON_LIST_LIMI
         limit: limit,
         offset
     }) as {results: Pokemon[]}
-    return response.results as Pokemon[]
+    return response.results
 }
