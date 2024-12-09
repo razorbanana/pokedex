@@ -1,3 +1,4 @@
+import "./Discovery.css"
 import { FC } from "react"
 import PokemonSearch from "../components/header/PokemonSearch"
 import CategorySelect from "../components/header/CategorySelect"
@@ -6,10 +7,12 @@ import Body from "../components/Body"
 import General from "../components/views/general/General"
 import PokemonData from "../components/views/general/PokemonData"
 import SillyButtons from "./sillybuttons/SillyButtons"
+import ErrorSlider from "../components/errorSlider/ErrorSlider"
 
 const Discovery:FC = () => {
     return (
-        <div>
+        <div className="Discovery">
+            <ErrorSlider />
             <h1>Discovery Component</h1>
             <h2>Silly Buttons</h2>
             <SillyButtons />
@@ -25,6 +28,7 @@ const Discovery:FC = () => {
             <General />
             <h2>PokemonData</h2>
             <PokemonData />
+            
         </div>
     )
 }

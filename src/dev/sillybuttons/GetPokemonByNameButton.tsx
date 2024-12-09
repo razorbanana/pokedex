@@ -8,8 +8,9 @@ const GetPokemonByNameButton:FC = () => {
         if (validatePokemon(pokemon)){
             const response = await getPokemonByName(pokemon)
             console.log(response)
+        }else{
+            console.log("Not validated")
         }
-        console.log("Not validated")
     }
 
     return (

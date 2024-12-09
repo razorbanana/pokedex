@@ -1,6 +1,7 @@
 import { FC } from "react";
 import GetPokemonsButton from "./GetPokemonsButton";
 import GetPokemonByNameButton from "./GetPokemonByNameButton";
+import ProduceErrorButton from "./ProduceErrorButton";
 
 const SillyButtons:FC = () => {
     return (
@@ -9,6 +10,8 @@ const SillyButtons:FC = () => {
             <GetPokemonsButton />
             <h3>GetPokemonByNameButton</h3>
             <GetPokemonByNameButton />
+            <h3>ProduceErrorButton</h3>
+            <ProduceErrorButton />
         </div>
     )
 } 

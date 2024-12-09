@@ -13,6 +13,7 @@ interface Config {
 export enum EventNames {
   UPDATE_CATEGORY = 'update_category',
   UPDATE_POKEMON = 'update_pokemon',
+  SHOW_ERROR = 'show_error'
 }
 
 export enum InputTypes {
