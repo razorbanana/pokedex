@@ -1,11 +1,11 @@
 import { FC } from "react"
 import './inputs.css'
 
-const Search:FC<{value: string, onChange:React.ChangeEventHandler<HTMLInputElement>}> = ({value, onChange}) => {
+const Search:FC<{value: string, onChange:React.ChangeEventHandler<HTMLInputElement>, onSubmit: ()=>void}> = ({value, onChange, onSubmit}) => {
     return (
         <div className="Search">
             <input value={value} onChange={onChange} />
-            <button><img src="/search.svg" alt="Icon" width="20" height="20" /></button>
+            <button onClick={onSubmit}><img src="/search.svg" alt="Icon" width="20" height="20" /></button>
         </div>
         
     )
