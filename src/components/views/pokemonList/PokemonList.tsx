@@ -20,6 +20,13 @@ const PokemonList:FC = () => {
         }
     }, [])
     
+    if (pokemonList.length === 0){
+        return (
+            <div>
+                Loading...
+            </div>
+        )
+    }
 
     return (
         <div>
