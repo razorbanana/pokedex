@@ -1,0 +1,31 @@
+.GridWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.PokemonRecap{
+    text-align: center;
+    margin: 2em;
+    border: black solid 3px;
+    border-radius: 20px;
+}
+
+.PokemonRecap-PokemonImage{
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+}
+
+.PokemonRecap-TypeIcon{
+    width: 30px;
+    height: 30px;
+    margin: 0 1px;
+}
+
+.PokemonRecap-PokemonTitle{
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
