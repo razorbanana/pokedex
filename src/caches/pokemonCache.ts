@@ -18,7 +18,8 @@ async function PokemonCache(cacheName:string):Promise<PokemonCacheInterface>{
 
     async function hasUrl(url: string):Promise<boolean>{
         const keys = await cache.keys()
-        const isCached = keys.some(key => key.url === url)
+        const req = new Request(url)
+        const isCached = keys.some(key => key.url === req.url)
         return isCached
     }
 
@@ -27,9 +28,8 @@ async function PokemonCache(cacheName:string):Promise<PokemonCacheInterface>{
         if (!response) {
             return DefaultResponse(); 
         }
-
         const body = await response.json();
-        return JSON.parse(body)
+        return body
     }
 
     return {

@@ -7,9 +7,9 @@ export const getPokemonByName = async (name:string):Promise<object> => {
     return response 
 }
 
-export const fetchPokemonNameList = async (limit?:number, offset?: number):Promise<Pokemon[]> => {
+export const fetchPokemonNameList = async (limit:number=config.POKEMON_LIST_LIMIT, offset?: number):Promise<Pokemon[]> => {
     const response = await fetchGetRequest(config.POKEMON_ENDPOINT, {
-        limit: limit || config.POKEMON_LIST_LIMIT,
+        limit: limit,
         offset
     }) as {results: Pokemon[]}
     return response.results as Pokemon[]

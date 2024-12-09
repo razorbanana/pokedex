@@ -7,13 +7,16 @@ const axiosInstance = axios.create({
 })
 
 export async function fetchGetRequest(endpoint:string, params?:object):Promise<object>{
-    const isCached = await pokemonCache.hasUrl(endpoint)
+    const cacheKey = endpoint + JSON.stringify(params || {})
+    const isCached = await pokemonCache.hasUrl(cacheKey)
     if (isCached){
-        const response = await pokemonCache.get(endpoint)
+        console.log("I use cache!")
+        const response = await pokemonCache.get(cacheKey)
         return response
     }
+    console.log("I dont use cache!")
     const response = await axiosInstance.get(endpoint, {params})
-    await pokemonCache.add(endpoint, response.data)
+    await pokemonCache.add(cacheKey, response.data)
 
     return response.data
 }
