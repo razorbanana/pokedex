@@ -10,7 +10,6 @@ const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData)
 
     useEffect(()=>{
-        console.log(`I will fetch ${pokemonName}`)
         getPokemonByName(pokemonName).then(response => {
             if (response){
                 setPokemon(response as PokemonData)

@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import config from "../../../config/config";
 import PokemonRecap from "./PokemonCard";
 import observer from "../../../observers/observer";
-import controller from "../../../controller/controller";
+import controller from "../../../controllers/controller";
 import PokemonInfo from "../../../types/PokemonInfoType";
 
 const PokemonList:FC = () => {

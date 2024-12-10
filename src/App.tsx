@@ -6,7 +6,7 @@ import Header from './components/header/Header'
 import config from './config/config'
 import Discovery from './dev/Discovery'
 import ErrorSlider from './components/errorSlider/ErrorSlider'
-import controller from "./controller/controller"
+import controller from "./controllers/controller"
 
 function App() {
   useEffect(()=> {

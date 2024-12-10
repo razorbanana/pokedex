@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 })
 
 export async function fetchGetRequest(endpoint:string, params?:GetRequestParams):Promise<unknown>{
-    const cacheKey = endpoint + JSON.stringify(params || {})
+    const cacheKey = endpoint + JSON.stringify(params || {}) + "a"
     const isCached = await pokemonCache.hasUrl(cacheKey)
     if (isCached){
         console.log("I use cache!")
