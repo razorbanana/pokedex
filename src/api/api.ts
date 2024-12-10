@@ -1,12 +1,13 @@
 import axios from "axios";
 import config from "../config/config";
 import pokemonCache from "../caches/pokemonCache";
+import GetRequestParams from "../types/GetRequestParamsType";
 
 const axiosInstance = axios.create({
     baseURL: config.BASE_API_URL,
 })
 
-export async function fetchGetRequest(endpoint:string, params?:object):Promise<object>{
+export async function fetchGetRequest(endpoint:string, params?:GetRequestParams):Promise<unknown>{
     const cacheKey = endpoint + JSON.stringify(params || {})
     const isCached = await pokemonCache.hasUrl(cacheKey)
     if (isCached){

@@ -10,7 +10,7 @@ interface PokemonCacheInterface {
 async function PokemonCache(cacheName:string):Promise<PokemonCacheInterface>{
     const cache = await caches.open(cacheName)
 
-    async function add(url:string, data:object):Promise<void>{
+    async function add(url:string, data:unknown):Promise<void>{
         const req = new Request(url)
         const res = new Response(JSON.stringify(data))
         await cache.put(req, res)

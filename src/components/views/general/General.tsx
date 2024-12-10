@@ -1,10 +1,10 @@
 import { FC } from "react"
-import PokemonData from "./PokemonData"
+import PokemonPage from "./PokemonPage"
 
 const General:FC = () => {
     return(
         <div>
-            <PokemonData />
+            <PokemonPage />
         </div>
     )
 }
