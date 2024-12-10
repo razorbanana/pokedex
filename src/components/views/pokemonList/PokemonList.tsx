@@ -2,18 +2,18 @@ import "./PokemonList.css"
 import { FC, useEffect, useState } from "react";
 import config from "../../../config/config";
 import PokemonRecap from "./PokemonRecap";
-import { Pokemon } from "../../../types/types";
 import observer from "../../../observers/observer";
 import controller from "../../../controller/controller";
+import PokemonInfo from "../../../types/PokemonInfoType";
 
 const PokemonList:FC = () => {
     const [numberToShow, setNumber] = useState(config.POKEMON_LIST_SHOW_LIMIT)
-    const [pokemonList, setPokemonList] = useState<Pokemon[]>(controller.getPokemons())
+    const [pokemonList, setPokemonList] = useState<PokemonInfo[]>(controller.getPokemons())
     const pokemonsToShow = pokemonList.slice(0, numberToShow)
 
     useEffect(()=> {
         const action = (data: unknown) => {
-            setPokemonList(data as Pokemon[])
+            setPokemonList(data as PokemonInfo[])
         }
         observer.subscribe(config.EVENT_NAMES.POKEMON_LIST_FETCHED, action)
         return ()=>{

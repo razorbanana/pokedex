@@ -1,5 +1,5 @@
 import config from "../config/config"
-import { Pokemon } from "../types/types"
+import PokemonInfo from "../types/PokemonInfoType"
 import { fetchGetRequest } from "./api"
 
 export const getPokemonByName = async (name:string):Promise<object> => {
@@ -7,10 +7,10 @@ export const getPokemonByName = async (name:string):Promise<object> => {
     return response 
 }
 
-export const fetchPokemonNameList = async (limit:number=config.POKEMON_LIST_LIMIT, offset?: number):Promise<Pokemon[]> => {
+export const fetchPokemonNameList = async (limit:number=config.POKEMON_LIST_LIMIT, offset?: number):Promise<PokemonInfo[]> => {
     const response = await fetchGetRequest(config.POKEMON_ENDPOINT, {
         limit: limit,
         offset
-    }) as {results: Pokemon[]}
+    }) as {results: PokemonInfo[]}
     return response.results
 }

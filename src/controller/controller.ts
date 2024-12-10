@@ -1,9 +1,10 @@
 import model from "../models/model"
-import { Pokemon } from "../types/types"
+import PokemonInfo from "../types/PokemonInfoType"
+
 
 interface Controller {
     fetchPokemons: () => Promise<void>,
-    getPokemons: () => Pokemon[]
+    getPokemons: () => PokemonInfo[]
 }
 
 const Controller = ():Controller => {
@@ -11,7 +12,7 @@ const Controller = ():Controller => {
         await model.fetchPokemonList()
     }
 
-    const getPokemons = ():Pokemon[] => {
+    const getPokemons = ():PokemonInfo[] => {
         const pokemons = model.getPokemonList()
         return pokemons || []
     }

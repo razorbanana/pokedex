@@ -16,12 +16,16 @@ const Discovery:FC = () => {
         silly: boolean,
         header: boolean,
         body: boolean,
+        list: boolean,
+        general: boolean,
         footer: boolean
     }>({
-        silly: true,
-        header: true,
-        body: true,
-        footer: true
+        silly: false,
+        header: false,
+        body: false,
+        list: true,
+        general: false,
+        footer: false
     })
 
     const handleCheckboxChange = (part: keyof typeof checkes) => {
@@ -63,15 +67,20 @@ const Discovery:FC = () => {
             {checkes.body && <>
                 <h2>Body</h2>
                 <Body />
+            </>}
+            {checkes.list && <>
+                <h2>Body</h2>
+                <Body />
                 <h2>Pokemon List</h2>
                 <PokemonList />
                 <h2>Pokemon Recap</h2>
                 <PokemonRecap pokemonName="pikachu" />
+            </>}
+            {checkes.general && <>
                 <h2>General</h2>
                 <General />
-                <h2>PokemonData</h2>
+                <h2>PokemonData</h2> 
                 <PokemonData />
-                
             </>}
             
             

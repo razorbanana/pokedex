@@ -3,31 +3,17 @@ import { FC, useEffect, useState } from "react";
 import { getPokemonByName } from "../../../api/pokemonAPI";
 import observer from '../../../observers/observer';
 import config from '../../../config/config';
-
-type Pokemon = {
-    name: string, 
-    types: Array<{type: {name:string}}>,
-    sprites: {
-        front_default: string
-    },
-    id: number
-}
+import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
+import PokemonData from '../../../types/PokemonDataType';
 
 const PokemonRecap:FC<{pokemonName:string}> = ({pokemonName}) => {
-    const [pokemon, setPokemon] = useState({
-        name:"default", 
-        types: [{type: {name: "normal"}}], 
-        sprites: {
-            front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-        },
-        id: 0
-    })
+    const [pokemon, setPokemon] = useState(DefaultPokemonData)
 
     useEffect(()=>{
         console.log(`I will fetch ${pokemonName}`)
         getPokemonByName(pokemonName).then(response => {
             if (response){
-                setPokemon(response as Pokemon)
+                setPokemon(response as PokemonData)
             }
         })
     }, [pokemonName])
