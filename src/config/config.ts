@@ -9,7 +9,8 @@ interface Config {
     POKEMON_ENDPOINT: string,
     POKEMON_LIST_LIMIT: number,
     ERROR_SLIDER_TIMEOUT: number,
-    POKEMON_LIST_SHOW_LIMIT: number
+    POKEMON_LIST_SHOW_LIMIT: number,
+    MODEL_KEYS: typeof ModelKeys,
 }
 
 export enum EventNames {
@@ -29,6 +30,12 @@ export enum Categories {
     ABILITIES = 'abilities'
 }
 
+export enum ModelKeys {
+    POKEMON = 'pokemon',
+    POKEMONS = 'pokemons',
+
+}
+
 const Config = function():Config{
     return {
         USER_NAME: "POKEUSER",
@@ -41,8 +48,9 @@ const Config = function():Config{
         POKEMON_ENDPOINT: import.meta.env.VITE_POKEMON_ENDPOINT,
         POKEMON_LIST_LIMIT: import.meta.env.VITE_POKEMON_LIST_LIMIT || 20,
         ERROR_SLIDER_TIMEOUT: 2500,
-        POKEMON_LIST_SHOW_LIMIT: 20
-    }
+        POKEMON_LIST_SHOW_LIMIT: 20,
+        MODEL_KEYS: ModelKeys
+    }   
 }
 
 const config = Config()

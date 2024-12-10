@@ -1,7 +1,9 @@
 import { fetchPokemonNameList, getPokemonByName } from "../api/pokemonAPI"
 import config from "../config/config"
 import observer from "../observers/observer"
+import PokemonData from "../types/PokemonDataType"
 import PokemonInfo from "../types/PokemonInfoType"
+import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
 
 
 interface Model {
@@ -10,23 +12,30 @@ interface Model {
     getPokemonList: () => PokemonInfo[]
 }
 
+type ModelData = {
+    pokemonList: PokemonInfo[],
+    pokemonData: PokemonData
+}
+
 const Model = function():Model{
-    const pokemonList:PokemonInfo[] = []
-    let pokemonData = {}
+    const data:ModelData = {
+        pokemonList: [],
+        pokemonData: DefaultPokemonData
+    }
 
     const fetchPokemonList = async ():Promise<void> => {
         const pokemons = await fetchPokemonNameList()
-        pokemonList.push(...pokemons)
+        data.pokemonList.push(...pokemons)
         observer.emit(config.EVENT_NAMES.POKEMON_LIST_FETCHED, pokemons)
     }
 
     const updatePokemonData = async (name:string):Promise<void> => {
-        pokemonData = await getPokemonByName(name)
-        observer.emit(config.EVENT_NAMES.UPDATE_POKEMON, pokemonData)
+        data.pokemonData = await getPokemonByName(name)
+        observer.emit(config.EVENT_NAMES.UPDATE_POKEMON, data.pokemonData)
     }
 
     const getPokemonList = ():PokemonInfo[] => {
-        return pokemonList
+        return data.pokemonList
     }
 
     return {
