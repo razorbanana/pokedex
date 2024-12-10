@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-.PokemonRecap{
+.PokemonCard{
     text-align: center;
     margin: 2em;
     border: black solid 3px;
@@ -11,19 +11,19 @@
     cursor: pointer;
 }
 
-.PokemonRecap-PokemonImage{
+.PokemonCard-PokemonImage{
     margin: 0 auto;
     height: 200px;
     width: 200px;
 }
 
-.PokemonRecap-TypeIcon{
+.PokemonCard-TypeIcon{
     width: 30px;
     height: 30px;
     margin: 0 1px;
 }
 
-.PokemonRecap-PokemonTitle{
+.PokemonCard-PokemonTitle{
     font-size: 20px;
     font-weight: 700;
     display: flex;

@@ -9,7 +9,7 @@ import PokemonData from "../components/views/general/PokemonPage"
 import SillyButtons from "./sillybuttons/SillyButtons"
 import ErrorSlider from "../components/errorSlider/ErrorSlider"
 import PokemonList from "../components/views/pokemonList/PokemonList"
-import PokemonRecap from "../components/views/pokemonList/PokemonRecap"
+import PokemonRecap from "../components/views/pokemonList/PokemonCard"
 
 const Discovery:FC = () => {
     const [checkes, setCheckes] = useState<{
@@ -73,7 +73,7 @@ const Discovery:FC = () => {
                 <Body />
                 <h2>Pokemon List</h2>
                 <PokemonList />
-                <h2>Pokemon Recap</h2>
+                <h2>Pokemon Card</h2>
                 <PokemonRecap pokemonName="pikachu" />
             </>}
             {checkes.general && <>

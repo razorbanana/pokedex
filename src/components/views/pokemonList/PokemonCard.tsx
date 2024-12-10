@@ -1,13 +1,13 @@
-import './PokemonList.css'
 import { FC, useEffect, useState } from "react";
 import { getPokemonByName } from "../../../api/pokemonAPI";
 import observer from '../../../observers/observer';
 import config from '../../../config/config';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
+import TypeIcons from './TypeIcons';
 
-const PokemonRecap:FC<{pokemonName:string}> = ({pokemonName}) => {
-    const [pokemon, setPokemon] = useState(DefaultPokemonData)
+const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
+    const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData)
 
     useEffect(()=>{
         console.log(`I will fetch ${pokemonName}`)
@@ -23,12 +23,13 @@ const PokemonRecap:FC<{pokemonName:string}> = ({pokemonName}) => {
     }
 
     return (
-        <div className="PokemonRecap" onClick={handlePokemonSelect}>
-            <p className='PokemonRecap-PokemonTitle'>{`${pokemon.name.toUpperCase()} #${pokemon.id}`}</p>{pokemon.types.map(type => <img src={`/types/${type.type.name}.svg`} key={type.type.name} alt="Type" className='PokemonRecap-TypeIcon'/>)}
+        <div className="PokemonCard" onClick={handlePokemonSelect}>
+            <p className='PokemonCard-PokemonTitle'>{`${pokemon.name.toUpperCase()} #${pokemon.id}`}</p>
+            <TypeIcons urls={pokemon.types} />
             <br></br>
-            <img src={pokemon.sprites.front_default} className='PokemonRecap-PokemonImage'/>
+            <img src={pokemon.sprites.front_default} className='PokemonCard-PokemonImage'/>
         </div>
     )
 }
 
-export default PokemonRecap
+export default PokemonCard
