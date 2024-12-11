@@ -1,7 +1,7 @@
 import "./PokemonList.css"
 import { FC, useEffect, useState } from "react";
 import config from "../../../config/config";
-import PokemonRecap from "./PokemonCard";
+import PokemonCard from "./PokemonCard";
 import observer from "../../../observers/observer";
 import controller from "../../../controllers/controller";
 import PokemonInfo from "../../../types/PokemonInfoType";
@@ -31,7 +31,7 @@ const PokemonList:FC = () => {
     return (
         <div className="PokemonList">
             <div className="GridWrapper">
-                {pokemonsToShow.map(pokemon => <PokemonRecap key={pokemon.name} pokemonName={pokemon.name}/>)}
+                {pokemonsToShow.map(pokemon => <PokemonCard key={pokemon.name} pokemonName={pokemon.name}/>)}
             </div>
             <button onClick={() => setNumber(numberToShow+config.POKEMON_LIST_SHOW_LIMIT)}>+{config.POKEMON_LIST_SHOW_LIMIT}</button>
         </div>

@@ -17,6 +17,7 @@ interface Config {
 export enum EventNames {
   UPDATE_CATEGORY = 'update_category',
   UPDATE_POKEMON = 'update_pokemon',
+  SEARCH_POKEMON = 'search_pokemon',
   SHOW_ERROR = 'show_error',
   POKEMON_LIST_FETCHED = 'pokemon_list_fetched'
 }

@@ -12,7 +12,7 @@ export const getPokemonByName = async (name:string):Promise<PokemonData> => {
         return response as PokemonData
     } catch (e: unknown) {
         logError(e)
-        observer.emit(config.EVENT_NAMES.SHOW_ERROR, "Fetching pokemon by name is failed")
+        observer.emit(config.EVENT_NAMES.SHOW_ERROR, "Fetching pokemon is failed")
         return DefaultPokemonData
     }
 }

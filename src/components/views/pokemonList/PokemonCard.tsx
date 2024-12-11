@@ -4,7 +4,7 @@ import observer from '../../../observers/observer';
 import config from '../../../config/config';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
-import TypeIcons from './TypeIcons';
+import PokemonTitle from "../../common/PokemonTitle";
 
 const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData)
@@ -18,13 +18,12 @@ const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     }, [pokemonName])
 
     const handlePokemonSelect = ():void => {
-        observer.emit(config.EVENT_NAMES.UPDATE_POKEMON, pokemonName)
+        observer.emit(config.EVENT_NAMES.SEARCH_POKEMON, pokemonName)
     }
 
     return (
         <div className="PokemonCard" onClick={handlePokemonSelect}>
-            <p className='PokemonCard-PokemonTitle'>{`${pokemon.name.toUpperCase()} #${pokemon.id}`}</p>
-            <TypeIcons urls={pokemon.types} />
+            <PokemonTitle name={pokemon.name} id={pokemon.id} types={pokemon.types} />
             <br></br>
             <img src={pokemon.sprites.front_default} className='PokemonCard-PokemonImage'/>
         </div>

@@ -19,25 +19,8 @@
     }
 }
 
-.ErrorSlider{
-    position: absolute;
-    width: 60%;
-    font-size: 40px;
-    background-color: brown;
-    height: 20%;
-    display: flex;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    justify-content: center;
-}
-
-.ErrorSlider p{
-    margin: auto;
-    color: white;
-}
-
 .LoadingScreen {
-    background-color: gainsboro;
+    background-color: var(--loading-bg-color);
     opacity: 70%;
     position: absolute;
     top: 0px;
@@ -54,3 +37,4 @@
     height: 30%;
     animation: pageAnimationIconRotate 2s ease-in-out infinite;
 }
+

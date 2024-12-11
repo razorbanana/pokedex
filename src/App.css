@@ -1,5 +1,7 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
+    --main-bg-color: white;
+    --loading-bg-color: gainsboro;
 }
 
 .App{

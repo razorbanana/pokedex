@@ -22,6 +22,7 @@ const Model = function():Model{
         pokemonList: [],
         pokemonData: DefaultPokemonData
     }
+    observer.subscribe(config.EVENT_NAMES.SEARCH_POKEMON, (data:unknown):Promise<void> => updatePokemonData(data as string))
 
     const fetchPokemonList = async ():Promise<void> => {
         const pokemons = await fetchPokemonNameList()

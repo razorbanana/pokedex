@@ -17,16 +17,4 @@
     width: 200px;
 }
 
-.PokemonCard-TypeIcon{
-    width: 30px;
-    height: 30px;
-    margin: 0 1px;
-}
 
-.PokemonCard-PokemonTitle{
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

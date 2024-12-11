@@ -1,0 +1,18 @@
+.PokemonPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.LayoutWrapper{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.PokemonInfoWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

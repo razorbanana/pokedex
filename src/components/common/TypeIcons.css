@@ -1,0 +1,12 @@
+.TypeIcons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.TypeIcon{
+    width: 30px;
+    height: 30px;
+    margin: 0 1px;
+}

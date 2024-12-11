@@ -4,7 +4,9 @@ type PokemonData = {
     sprites: {
         front_default: string
     },
-    id: number
+    id: number,
+    height: number,
+    weight: number
 }
 
 export default PokemonData
