@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import "./error.css"
+import "./common.css"
 import observer from "../../observers/observer";
 import config from "../../config/config";
 

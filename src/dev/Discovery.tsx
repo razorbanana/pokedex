@@ -7,9 +7,10 @@ import Body from "../components/Body"
 import General from "../components/views/general/General"
 import PokemonData from "../components/views/general/PokemonPage"
 import SillyButtons from "./sillybuttons/SillyButtons"
-import ErrorSlider from "../components/errorSlider/ErrorSlider"
+import ErrorSlider from "../components/common/ErrorSlider"
 import PokemonList from "../components/views/pokemonList/PokemonList"
 import PokemonRecap from "../components/views/pokemonList/PokemonCard"
+import TempLoading from "./TempLoading"
 
 const Discovery:FC = () => {
     const [checkes, setCheckes] = useState<{
@@ -65,6 +66,8 @@ const Discovery:FC = () => {
                 <CategorySelect />
             </>}
             {checkes.body && <>
+                <h2>Loading</h2>
+                <TempLoading />
                 <h2>Body</h2>
                 <Body />
             </>}

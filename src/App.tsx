@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import Header from './components/header/Header'
 import config from './config/config'
 import Discovery from './dev/Discovery'
-import ErrorSlider from './components/errorSlider/ErrorSlider'
+import ErrorSlider from './components/common/ErrorSlider'
 import controller from "./controllers/controller"
 
 function App() {

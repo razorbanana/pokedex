@@ -5,6 +5,7 @@ import PokemonRecap from "./PokemonCard";
 import observer from "../../../observers/observer";
 import controller from "../../../controllers/controller";
 import PokemonInfo from "../../../types/PokemonInfoType";
+import Loading from "../../common/Loading";
 
 const PokemonList:FC = () => {
     const [numberToShow, setNumber] = useState(config.POKEMON_LIST_SHOW_LIMIT)
@@ -23,9 +24,7 @@ const PokemonList:FC = () => {
     
     if (pokemonList.length === 0){
         return (
-            <div>
-                Loading...
-            </div>
+            <Loading />
         )
     }
 
