@@ -7,12 +7,26 @@
 }
 
 .LayoutWrapper{
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .PokemonInfoWrapper{
+    background-color: var(--side-bg-color);
+    width: fit-content;
+    height: fit-content;
     display: grid;
+    align-items: center;
+    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    border: solid 2px var(--side-border-color);
+}
+
+.PokemonInfoWrapper>div:first-child{
+    grid-column: span 2;
 }

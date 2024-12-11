@@ -3,7 +3,9 @@ import logError from "../logging/logError"
 import observer from "../observers/observer"
 import PokemonData from "../types/PokemonDataType"
 import PokemonInfo from "../types/PokemonInfoType"
+import SpeciesDataType from "../types/SpeciesDataType"
 import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
+import DefaultSpeciesData from "../utility/defaults/DefaultSpeciesData"
 import { fetchGetRequest } from "./api"
 
 export const getPokemonByName = async (name:string):Promise<PokemonData> => {
@@ -13,7 +15,18 @@ export const getPokemonByName = async (name:string):Promise<PokemonData> => {
     } catch (e: unknown) {
         logError(e)
         observer.emit(config.EVENT_NAMES.SHOW_ERROR, "Fetching pokemon is failed")
-        return DefaultPokemonData
+        return DefaultPokemonData()
+    }
+}
+
+export const getSpeciesByName = async (name:string):Promise<SpeciesDataType> => {
+    try {  
+        const response = await fetchGetRequest(`${config.SPECIES_ENDPOINT}/${name}`)
+        return response as SpeciesDataType
+    } catch (e: unknown) {
+        logError(e)
+        observer.emit(config.EVENT_NAMES.SHOW_ERROR, "Fetching species is failed")
+        return DefaultSpeciesData()
     }
 }
 

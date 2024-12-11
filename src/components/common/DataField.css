@@ -1,0 +1,11 @@
+.DataField {
+    padding: 5px 20px;
+}
+
+.DataField-Label {
+    color: var(--side-border-color);
+}
+
+.DataField-Value {
+    font-weight: bold;
+}

@@ -1,6 +1,7 @@
 import PokemonData from "../../types/PokemonDataType"
 
-const DefaultPokemonData:PokemonData = {
+const DefaultPokemonData:() => PokemonData = () => {
+    return {
         name:"What am I", 
         types: [{type: {name: "normal"}}], 
         sprites: {
@@ -10,5 +11,6 @@ const DefaultPokemonData:PokemonData = {
         height: 0,
         weight: 0
     }
+}
 
 export default DefaultPokemonData

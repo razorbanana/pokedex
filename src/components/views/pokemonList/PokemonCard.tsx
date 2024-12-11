@@ -5,9 +5,10 @@ import config from '../../../config/config';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
 import PokemonTitle from "../../common/PokemonTitle";
+import PokemonImage from "../../common/PokemonImage";
 
 const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
-    const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData)
+    const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData())
 
     useEffect(()=>{
         getPokemonByName(pokemonName).then(response => {
@@ -25,7 +26,7 @@ const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
         <div className="PokemonCard" onClick={handlePokemonSelect}>
             <PokemonTitle name={pokemon.name} id={pokemon.id} types={pokemon.types} />
             <br></br>
-            <img src={pokemon.sprites.front_default} className='PokemonCard-PokemonImage'/>
+            <PokemonImage src={pokemon.sprites.front_default}/>
         </div>
     )
 }
