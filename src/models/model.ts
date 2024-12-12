@@ -8,16 +8,18 @@ import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
 import DefaultSpeciesData from "../utility/defaults/DefaultSpeciesData"
 
 
-interface Model {
+type Model = {
     fetchPokemonList:  () => Promise<void>,
     updatePokemonData: (name:string) => Promise<void>,
-    getPokemonList: () => PokemonInfo[]
+    getPokemonList: () => PokemonInfo[],
+    getPokemonData: () => PokemonDataType,
+    getPokemonSpeciesData: () => SpeciesDataType
 }
 
 type ModelData = {
     pokemonList: PokemonInfo[],
     pokemonData: PokemonDataType,
-    pokemonSpeciesData: SpeciesDataType
+    pokemonSpeciesData: SpeciesDataType,
 }
 
 const Model = function():Model{
@@ -44,11 +46,19 @@ const Model = function():Model{
     const getPokemonList = ():PokemonInfo[] => {
         return data.pokemonList
     }
+    const getPokemonData = ():PokemonDataType => {
+        return data.pokemonData
+    }
+    const getPokemonSpeciesData = ():SpeciesDataType => {
+        return data.pokemonSpeciesData
+    }
 
     return {
         fetchPokemonList,
         updatePokemonData,
-        getPokemonList
+        getPokemonList,
+        getPokemonData,
+        getPokemonSpeciesData
     }
 }
 

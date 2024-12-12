@@ -9,6 +9,7 @@ import SpeciesDataType from "../../../types/SpeciesDataType"
 import DefaultSpeciesData from "../../../utility/defaults/DefaultSpeciesData"
 import fixFlavorText from "../../../utility/flavorTextFix"
 import PokemonImage from "../../common/PokemonImage"
+import controller from "../../../controllers/controller"
 
 const PokemonPage:FC = () => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData())
@@ -28,6 +29,11 @@ const PokemonPage:FC = () => {
             observer.unsubscribe(config.EVENT_NAMES.UPDATE_SPECIES, action)
         }
     }, [])
+    useEffect(()=> {
+        setPokemon(controller.getChosenPokemon())
+        setSpeciesData(controller.getChosenSpecies())
+    }, [])
+
     return (
         <div className="PokemonPage">
             <PokemonTitle name={pokemon.name} id={pokemon.id} types={pokemon.types} />

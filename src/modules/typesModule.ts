@@ -1,4 +1,4 @@
-import Type from "../types/PokemonTypeEnum";
+import Type from "../types/pokemonTypeEnum";
 
 interface TypesModule {
     getTypeIconURL: (name:string) => string
