@@ -3,13 +3,14 @@ import observer from "../../../observers/observer"
 import config from "../../../config/config"
 import PokemonData from "../../../types/PokemonDataType"
 import DefaultPokemonData from "../../../utility/defaults/DefaultPokemon"
-import PokemonTitle from "../../common/PokemonTitle"
-import DataField from "../../common/DataField"
+import PokemonTitle from "../../common/pokemonData/PokemonTitle"
+import DataField from "../../common/pokemonData/DataField"
 import SpeciesDataType from "../../../types/SpeciesDataType"
 import DefaultSpeciesData from "../../../utility/defaults/DefaultSpeciesData"
 import fixFlavorText from "../../../utility/flavorTextFix"
-import PokemonImage from "../../common/PokemonImage"
+import PokemonImage from "../../common/pokemonData/PokemonImage"
 import controller from "../../../controllers/controller"
+import AudioComponent from "../../common/pokemonData/AudioComponent"
 
 const PokemonPage:FC = () => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData())
@@ -44,6 +45,12 @@ const PokemonPage:FC = () => {
                     <DataField label="Height" value={pokemon.height} />
                     <DataField label="Weight" value={pokemon.weight} />
                 </div>
+                {Object.keys(pokemon.cries).map((cry:string) => {
+                    if (cry === "latest" || cry === "legacy") {
+                        return <AudioComponent key={cry} src={pokemon.cries[cry]} label={cry} />;
+                    }
+                    return null;
+                })}
             </div>
         </div>
     )

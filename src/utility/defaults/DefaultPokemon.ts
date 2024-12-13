@@ -9,7 +9,11 @@ const DefaultPokemonData:() => PokemonData = () => {
         },
         id: 0,
         height: 0,
-        weight: 0
+        weight: 0,
+        cries: {
+            latest: "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/132.ogg",
+            legacy: "https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/132.ogg"
+        }
     }
 }
 

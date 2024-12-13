@@ -15,6 +15,10 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+.LayoutWrapper>div{
+    margin: 20px;
+}
+
 .PokemonInfoWrapper{
     background-color: var(--side-bg-color);
     width: fit-content;

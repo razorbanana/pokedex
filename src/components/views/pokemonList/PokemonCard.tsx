@@ -4,8 +4,8 @@ import observer from '../../../observers/observer';
 import config from '../../../config/config';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
-import PokemonTitle from "../../common/PokemonTitle";
-import PokemonImage from "../../common/PokemonImage";
+import PokemonTitle from "../../common/pokemonData/PokemonTitle";
+import PokemonImage from "../../common/pokemonData/PokemonImage";
 
 const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData())

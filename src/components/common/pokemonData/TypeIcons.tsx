@@ -1,6 +1,6 @@
 import './TypeIcons.css'
 import { FC } from "react";
-import typesModule from "../../modules/typesModule";
+import typesModule from "../../../modules/typesModule";
 
 const TypeIcons:FC<{urls:{type:{name:string}}[]}> = ({urls}) => {
     return (

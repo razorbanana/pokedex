@@ -6,7 +6,11 @@ type PokemonData = {
     },
     id: number,
     height: number,
-    weight: number
+    weight: number,
+    cries: {
+        latest: string,
+        legacy: string
+    }
 }
 
 export default PokemonData
