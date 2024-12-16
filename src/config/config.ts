@@ -9,20 +9,12 @@ interface Config {
     POKEMON_LIST_LIMIT: number,
     ERROR_SLIDER_TIMEOUT: number,
     POKEMON_LIST_SHOW_LIMIT: number,
-    MODEL_KEYS: typeof ModelKeys,
     LOADING_ICON_URL: string
 }
-
-
 
 export enum InputTypes {
     SELECT_INPUT = 'select',
     SEARCH_INPUT = 'search'
-}
-
-export enum ModelKeys {
-    POKEMON = 'pokemon',
-    POKEMONS = 'pokemons',
 }
 
 const Config = function():Config{
@@ -37,7 +29,6 @@ const Config = function():Config{
         POKEMON_LIST_LIMIT: import.meta.env.VITE_POKEMON_LIST_LIMIT || 20,
         ERROR_SLIDER_TIMEOUT: 2500,
         POKEMON_LIST_SHOW_LIMIT: 20,
-        MODEL_KEYS: ModelKeys,
         LOADING_ICON_URL: "./loading.svg"
     }   
 }

@@ -1,4 +1,28 @@
-import Type from "../types/pokemonTypeEnum";
+import isType from "../types/guards/isPokemonType";
+
+export enum Type {
+    normal= "normal",
+    fighting= "fighting",
+    flying= "flying",
+    poison= "poison",
+    ground= "ground",
+    rock= "rock",
+    bug= "bug",
+    ghost= "ghost",
+    steel= "steel",
+    fire= "fire",
+    water= "water",
+    grass= "grass",
+    electric= "electric",
+    psychic= "psychic",
+    ice= "ice",
+    dragon= "dragon",
+    dark= "dark",
+    fairy= "fairy",
+    stellar= "stellar",
+    unknown= "unknown",
+}
+
 
 interface TypesModule {
     getTypeIconURL: (name:string) => string
@@ -27,10 +51,6 @@ const TypesModule:() => TypesModule = () => {
         fairy: `/types/fairy.svg`,
         stellar: `/types/stellar.png`,
         unknown: `/types/unknown.svg`,
-    }
-
-    function isType(value: string): boolean {
-        return Object.values(Type).includes(value as Type);
     }
 
     const getTypeIconURL = (name:string):string => {

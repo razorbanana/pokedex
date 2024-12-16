@@ -1,4 +1,4 @@
-import model from "../models/model"
+import model, { ModelKeys } from "../models/model"
 import PokemonData from "../types/PokemonDataType"
 import PokemonInfo from "../types/PokemonInfoType"
 import SpeciesDataType from "../types/SpeciesDataType"
@@ -19,17 +19,17 @@ const Controller = ():Controller => {
     }
 
     const getPokemons = ():PokemonInfo[] => {
-        const pokemons = model.getPokemonList()
+        const pokemons = model.getData(ModelKeys.POKEMONS)
         return pokemons || []
     }
 
     const getChosenPokemon = ():PokemonData => {
-        const pokemon = model.getPokemonData()
+        const pokemon = model.getData(ModelKeys.POKEMON)
         return pokemon || DefaultPokemonData()
     }
 
     const getChosenSpecies = ():SpeciesDataType => {
-        const species = model.getPokemonSpeciesData()
+        const species = model.getData(ModelKeys.SPECIES)
         return species || DefaultSpeciesData()
     }
 

@@ -1,7 +1,7 @@
-import model from "../models/model"
+import controller from "../controllers/controller"
 
 const validatePokemon = (name:string):boolean => {
-    const pokemons = model.getPokemonList()
+    const pokemons = controller.getPokemons()
     if (!Number.isNaN(parseInt(name)) && parseInt(name) <= pokemons.length){
         return true
     }
