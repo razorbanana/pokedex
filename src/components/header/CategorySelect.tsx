@@ -1,22 +1,31 @@
 import { FC, useEffect, useState } from "react";
-import observer from "../../observers/observer";
-import config, { Categories } from "../../config/config";
 import Select from "../inputs/Select";
+import categoryModule, { Categories } from "../../modules/categoryModule";
+import observer, { EventNames } from "../../observers/observer";
+import DefaultCategoryChoice from "../../utility/defaults/DefaultCategoryChoice";
+import isCategoryChoice from "../../types/guards/isCategoryChoice";
+
 
 const CategorySelect:FC = () => {
-    const [category, setCategory] = useState("general")
+    const [category, setCategory] = useState(DefaultCategoryChoice())
     const categoryChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
-        observer.emit(config.EVENT_NAMES.UPDATE_CATEGORY, e.target.value)
+        if (isCategoryChoice(e.target.value)){
+            observer.emit(EventNames.UPDATE_CATEGORY, e.target.value)
+        }
     }
     useEffect(() => {
-        const action = (data: unknown) => setCategory(data as Categories)
-        observer.subscribe(config.EVENT_NAMES.UPDATE_CATEGORY, action)
+        const action = (data?: Categories) => {
+            if (data){
+                setCategory(data)
+            }
+        }
+        observer.subscribe(EventNames.UPDATE_CATEGORY, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.UPDATE_CATEGORY, action)
+            observer.unsubscribe(EventNames.UPDATE_CATEGORY, action)
         }
     }, [])
     return (
-        <Select value={category} onChange={categoryChange} options={Object.values(config.CATEGORIES)}/>
+        <Select value={category} onChange={categoryChange} options={categoryModule.getCategories()}/>
     )
 }
 

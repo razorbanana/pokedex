@@ -2,7 +2,7 @@ import "./PokemonList.css"
 import { FC, useEffect, useState } from "react";
 import config from "../../../config/config";
 import PokemonCard from "./PokemonCard";
-import observer from "../../../observers/observer";
+import observer, { EventNames } from "../../../observers/observer";
 import controller from "../../../controllers/controller";
 import PokemonInfo from "../../../types/PokemonInfoType";
 import Loading from "../../common/Loading";
@@ -16,9 +16,9 @@ const PokemonList:FC = () => {
         const action = (data: unknown) => {
             setPokemonList(data as PokemonInfo[])
         }
-        observer.subscribe(config.EVENT_NAMES.POKEMON_LIST_FETCHED, action)
+        observer.subscribe(EventNames.POKEMON_LIST_FETCHED, action)
         return ()=>{
-            observer.unsubscribe(config.EVENT_NAMES.POKEMON_LIST_FETCHED, action)
+            observer.unsubscribe(EventNames.POKEMON_LIST_FETCHED, action)
         }
     }, [])
     

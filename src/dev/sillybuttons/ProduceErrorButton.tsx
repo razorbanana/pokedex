@@ -1,12 +1,11 @@
 import { FC, useState } from "react";
-import observer from "../../observers/observer";
-import config from "../../config/config";
+import observer, { EventNames } from "../../observers/observer";
 
 const ProduceErrorButton:FC = () => {
     const [error, setError] = useState("")
 
     const handleSendError = ():void => {
-        observer.emit(config.EVENT_NAMES.SHOW_ERROR, error)
+        observer.emit(EventNames.SHOW_ERROR, error)
     }
 
     return (

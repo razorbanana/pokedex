@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react"
-import observer from "../../../observers/observer"
-import config from "../../../config/config"
+import observer, { EventNames } from "../../../observers/observer"
 import PokemonData from "../../../types/PokemonDataType"
 import DefaultPokemonData from "../../../utility/defaults/DefaultPokemon"
 import PokemonTitle from "../../common/pokemonData/PokemonTitle"
@@ -18,16 +17,16 @@ const PokemonPage:FC = () => {
     const flavor_text = fixFlavorText(speciesData.flavor_text_entries[0].flavor_text)
     useEffect(()=> {
         const action = (data:unknown) => setPokemon(data as PokemonData)
-        observer.subscribe(config.EVENT_NAMES.UPDATE_POKEMON, action)
+        observer.subscribe(EventNames.UPDATE_POKEMON, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.UPDATE_POKEMON, action)
+            observer.unsubscribe(EventNames.UPDATE_POKEMON, action)
         }
     }, [])
     useEffect(()=> {
         const action = (data:unknown) => setSpeciesData(data as SpeciesDataType)
-        observer.subscribe(config.EVENT_NAMES.UPDATE_SPECIES, action)
+        observer.subscribe(EventNames.UPDATE_SPECIES, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.UPDATE_SPECIES, action)
+            observer.unsubscribe(EventNames.UPDATE_SPECIES, action)
         }
     }, [])
     useEffect(()=> {

@@ -1,25 +1,31 @@
 import General from "../components/views/general/General";
 import PokemonList from "../components/views/pokemonList/PokemonList";
-import { Categories } from "../config/config";
 import CategoryObject from "../types/CategoryType";
-import DefaultCategory from "../utility/defaults/DefaultCategory";
+import DefaultCategory from "../utility/defaults/DefaultCategoryObject";
 
 interface CategoryModule {
-    getCategory: (name:Categories) => CategoryObject
+    getCategory: (name:Categories) => CategoryObject,
+    getCategories: () => Categories[]
+}
+
+export enum Categories {
+    GENERAL = 'GENERAL',
+    ABILITIES = 'ABILITIES',
+    LIST = "LIST"
 }
 
 const CategoryModule:() => CategoryModule = () => {
 
-    const categoryMap: {[C in Categories] : CategoryObject} = {
-        "general": {
+    const categoryMap: Record<Categories, CategoryObject> = {
+        [Categories.GENERAL]: {
             component: General,
             icon: ""
         },
-        "abilities": {
+        [Categories.ABILITIES]: {
             component: General,
             icon: ""
         },
-        "list": {
+        [Categories.LIST]: {
             component: PokemonList,
             icon: ""
         }
@@ -33,8 +39,13 @@ const CategoryModule:() => CategoryModule = () => {
         return result
     }
 
+    const getCategories = (): Categories[] => {
+        return Object.keys(categoryMap) as Categories[]
+    }
+
     return {
-        getCategory
+        getCategory,
+        getCategories
     }
 }
 

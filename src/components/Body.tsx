@@ -1,30 +1,29 @@
 import { FC, useEffect, useState } from "react"
-import observer from "../observers/observer"
-import config, {Categories} from "../config/config"
+import observer, { EventNames } from "../observers/observer"
+import categoryModule, { Categories } from "../modules/categoryModule"
 
 const Body:FC = () => {
     const [category, setCategory] = useState('general')
     
     useEffect(() => {
-        observer.subscribe(config.EVENT_NAMES.UPDATE_CATEGORY, (data: unknown) => setCategory(data as Categories))
+        const action = (data?: Categories) => {
+            if (data){
+                setCategory(data)
+            }
+        }
+        observer.subscribe(EventNames.UPDATE_CATEGORY, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.UPDATE_CATEGORY, (data: unknown) => setCategory(data as Categories))
+            observer.unsubscribe(EventNames.UPDATE_CATEGORY, (data: unknown) => setCategory(data as Categories))
         }
     }, [])
 
-    const renderView:() => JSX.Element = () => {
-                switch(category){
-                    case config.CATEGORIES.GENERAL:
-                        return <></>
-                    case config.CATEGORIES.ABILITIES:
-                        return <></>
-                    default:
-                        return <></>
-                }
-            }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const renderView:() => FC = () => {
+        return categoryModule.getCategory(category as Categories).component
+    }
     return (
         <div>
-            {renderView()}
+            Ill fix you some day
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { getPokemonByName } from "../../../api/pokemonAPI";
-import observer from '../../../observers/observer';
-import config from '../../../config/config';
+import observer, { EventNames } from '../../../observers/observer';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
 import PokemonTitle from "../../common/pokemonData/PokemonTitle";
@@ -19,7 +18,7 @@ const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     }, [pokemonName])
 
     const handlePokemonSelect = ():void => {
-        observer.emit(config.EVENT_NAMES.SEARCH_POKEMON, pokemonName)
+        observer.emit(EventNames.SEARCH_POKEMON, pokemonName)
     }
 
     return (

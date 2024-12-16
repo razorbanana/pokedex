@@ -1,32 +1,57 @@
-import type {EventNames} from "../config/config"
+import { Categories } from "../modules/categoryModule"
+import PokemonData from "../types/PokemonDataType"
+import PokemonInfo from "../types/PokemonInfoType"
+import SpeciesDataType from "../types/SpeciesDataType"
 
 interface Observer {
-    subscribe: (name: EventNames, action: Action) => void,
-    unsubscribe: (name: EventNames, action: Action) => void,
-    emit: (name: EventNames, data?: unknown) => void,
+    subscribe: <E extends keyof Events>(name:E, action: Action<E>) => void,
+    unsubscribe: <E extends keyof Events>(name:E, action: Action<E>) => void,
+    emit: <E extends keyof Events>(name:E, data?: Events[E]) => void,
 }
 
-type Action = (data?: unknown) => void
+export enum EventNames {
+  UPDATE_CATEGORY= 'update_category',
+  UPDATE_POKEMON= 'update_pokemon',
+  SEARCH_POKEMON= 'search_pokemon',
+  SHOW_ERROR= 'show_error',
+  POKEMON_LIST_FETCHED= 'pokemon_list_fetched',
+  UPDATE_SPECIES= 'update_species'
+}
+
+type Events = {
+    [EventNames.UPDATE_CATEGORY]: Categories,
+    [EventNames.UPDATE_POKEMON]: PokemonData,
+    [EventNames.SEARCH_POKEMON]: string,
+    [EventNames.SHOW_ERROR]: string,
+    [EventNames.POKEMON_LIST_FETCHED]: PokemonInfo[],
+    [EventNames.UPDATE_SPECIES]: SpeciesDataType,
+}
+
+type Action<E extends keyof Events> = (data?: Events[E]) => void
+
+type EventHandlers = {
+    [E in keyof Events]?: Action<E>[];
+};
 
 const Observer = function():Observer{
     
-    const events:Partial<Record<EventNames, Action[]>> = {}
+    const events:EventHandlers = {}
 
-    const subscribe = (name:EventNames, action: Action):void => {
-        if (events[name]){
-            events[name].push(action)
-        }else{
-            events[name] = [action]
+    const subscribe = <E extends keyof Events>(name:E, action: Action<E>):void => {
+        if (!events[name]) {
+            events[name] = [];
+        }
+        events[name].push(action);
+    }
+
+    const unsubscribe = <E extends keyof Events>(name:E, action: Action<E>):void => {
+        if (events[name]) {
+            const newEvents = events[name].filter((subscriber) => subscriber !== action);
+            events[name] = newEvents as EventHandlers[E]
         }
     }
 
-    const unsubscribe = (name:EventNames, action:Action):void => {
-        if (events[name]){
-            events[name] = events[name].filter(subscriber => subscriber !== action)
-        }
-    }
-
-    const emit = (name:EventNames, data?: unknown): void => {
+    const emit = <E extends keyof Events>(name:E, data?: Events[E]): void => {
         events[name]?.forEach(action => action(data))
     }
 

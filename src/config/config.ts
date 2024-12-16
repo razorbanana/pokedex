@@ -1,8 +1,6 @@
 interface Config {
     USER_NAME: string,
-    EVENT_NAMES: typeof EventNames,
     INPUT_TYPES: typeof InputTypes,
-//    CATEGORIES: typeof Categories,
     DISCOVERY: boolean,
     BASE_API_URL: string,
     POKEMON_CACHE_NAME: string,
@@ -15,40 +13,22 @@ interface Config {
     LOADING_ICON_URL: string
 }
 
-export enum EventNames {
-  UPDATE_CATEGORY = 'update_category',
-  UPDATE_POKEMON = 'update_pokemon',
-  SEARCH_POKEMON = 'search_pokemon',
-  SHOW_ERROR = 'show_error',
-  POKEMON_LIST_FETCHED = 'pokemon_list_fetched',
-  UPDATE_SPECIES = 'update_species'
-}
+
 
 export enum InputTypes {
     SELECT_INPUT = 'select',
     SEARCH_INPUT = 'search'
 }
 
-export type Categories = 'general' | 'abilities' | 'list'
-
-// export enum Categories {
-//     GENERAL = 'general',
-//     ABILITIES = 'abilities',
-//     LIST = 'list'
-// }
-
 export enum ModelKeys {
     POKEMON = 'pokemon',
     POKEMONS = 'pokemons',
-
 }
 
 const Config = function():Config{
     return {
         USER_NAME: "POKEUSER",
-        EVENT_NAMES: EventNames,
         INPUT_TYPES: InputTypes,
-//        CATEGORIES: Categories,
         DISCOVERY: import.meta.env.VITE_DISCOVERY === "true",
         BASE_API_URL: import.meta.env.VITE_BASE_URL,
         POKEMON_CACHE_NAME: import.meta.env.VITE_POKEMON_CACHE_NAME,

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import "./ErrorSlider.css"
-import observer from "../../observers/observer";
+import observer, { EventNames } from "../../observers/observer";
 import config from "../../config/config";
 
 const ErrorSlider:FC = () => {
@@ -11,9 +11,9 @@ const ErrorSlider:FC = () => {
             setError(data as string)
             setTimeout(()=>setError(""), config.ERROR_SLIDER_TIMEOUT)
         }
-        observer.subscribe(config.EVENT_NAMES.SHOW_ERROR, action)
+        observer.subscribe(EventNames.SHOW_ERROR, action)
         return () => {
-            observer.unsubscribe(config.EVENT_NAMES.SHOW_ERROR, action)
+            observer.unsubscribe(EventNames.SHOW_ERROR, action)
         }
     }, [])
 
