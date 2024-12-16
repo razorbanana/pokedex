@@ -46,5 +46,5 @@ const TypesModule:() => TypesModule = () => {
 }
 
 const typesModule = TypesModule()
-
+Object.freeze(typesModule)
 export default typesModule
