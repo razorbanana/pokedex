@@ -10,8 +10,10 @@ const PokemonSearch:FC = () => {
     }
 
     useEffect(()=>{
-        const action = (data: unknown) => {
-            setPokemonSearch(data as string)
+        const action = (data?: string) => {
+            if (data){
+                setPokemonSearch(data)
+            }
         }
         observer.subscribe(EventNames.SEARCH_POKEMON, action)
         return () => {

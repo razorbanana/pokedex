@@ -16,7 +16,11 @@ const PokemonPage:FC = () => {
     const [speciesData, setSpeciesData] = useState<SpeciesDataType>(DefaultSpeciesData())
     const flavor_text = fixFlavorText(speciesData.flavor_text_entries[0].flavor_text)
     useEffect(()=> {
-        const action = (data:unknown) => setPokemon(data as PokemonData)
+        const action = (data?:PokemonData) => {
+            if(data){
+                setPokemon(data)
+            }
+        }
         observer.subscribe(EventNames.UPDATE_POKEMON, action)
         return () => {
             observer.unsubscribe(EventNames.UPDATE_POKEMON, action)

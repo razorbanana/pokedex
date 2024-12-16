@@ -13,8 +13,10 @@ const PokemonList:FC = () => {
     const pokemonsToShow = pokemonList.slice(0, numberToShow)
 
     useEffect(()=> {
-        const action = (data: unknown) => {
-            setPokemonList(data as PokemonInfo[])
+        const action = (data?: PokemonInfo[]) => {
+            if (data){
+                setPokemonList(data)
+            }
         }
         observer.subscribe(EventNames.POKEMON_LIST_FETCHED, action)
         return ()=>{
