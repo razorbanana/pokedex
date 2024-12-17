@@ -1,7 +1,7 @@
 import { Categories } from "../../modules/categoryModule";
 
 const DefaultCategoryChoice = ():Categories => {
-    return Categories.GENERAL
+    return Categories.LIST
 }
 
 export default DefaultCategoryChoice

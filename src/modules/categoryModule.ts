@@ -20,22 +20,19 @@ const CategoryModule:() => CategoryModule = () => {
     const categoryMap: Record<Categories, CategoryObject> = {
         [Categories.GENERAL]: {
             component: General,
-            icon: ""
         },
         [Categories.ABILITIES]: {
             component: Abilities,
-            icon: ""
         },
         [Categories.LIST]: {
             component: PokemonList,
-            icon: ""
         }
     }
 
     const getCategory = (name:Categories): Required<CategoryObject> => {
         const result = {
+            ...DefaultCategory(),
             ...categoryMap[name],
-            ...DefaultCategory()
         }
         return result
     }

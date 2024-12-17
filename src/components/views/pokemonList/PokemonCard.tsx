@@ -5,6 +5,7 @@ import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
 import PokemonData from '../../../types/PokemonDataType';
 import PokemonTitle from "../../common/pokemonData/PokemonTitle";
 import PokemonImage from "../../common/pokemonData/PokemonImage";
+import { Categories } from "../../../modules/categoryModule";
 
 const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
     const [pokemon, setPokemon] = useState<PokemonData>(DefaultPokemonData())
@@ -19,6 +20,7 @@ const PokemonCard:FC<{pokemonName:string}> = ({pokemonName}) => {
 
     const handlePokemonSelect = ():void => {
         observer.emit(EventNames.SEARCH_POKEMON, pokemonName)
+        observer.emit(EventNames.UPDATE_CATEGORY, Categories.GENERAL)
     }
 
     return (
