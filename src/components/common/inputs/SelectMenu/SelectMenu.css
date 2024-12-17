@@ -47,9 +47,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .SelectMenuCard:hover{
     background-color: var(--side-bg-color);
-    color: var(--side-font-color)
+    color: var(--side-font-color);
+    cursor: pointer;
 }

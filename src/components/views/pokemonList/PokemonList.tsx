@@ -6,6 +6,7 @@ import observer, { EventNames } from "../../../observers/observer";
 import controller from "../../../controllers/controller";
 import PokemonInfo from "../../../types/PokemonInfoType";
 import Loading from "../../common/Loading";
+import Button from "../../common/button/Button";
 
 const PokemonList:FC = () => {
     const [numberToShow, setNumber] = useState(config.POKEMON_LIST_SHOW_LIMIT)
@@ -35,7 +36,7 @@ const PokemonList:FC = () => {
             <div className="GridWrapper">
                 {pokemonsToShow.map(pokemon => <PokemonCard key={pokemon.name} pokemonName={pokemon.name}/>)}
             </div>
-            <button onClick={() => setNumber(numberToShow+config.POKEMON_LIST_SHOW_LIMIT)}>+{config.POKEMON_LIST_SHOW_LIMIT}</button>
+            <Button onClick={() => setNumber(numberToShow+config.POKEMON_LIST_SHOW_LIMIT)}>See more pokemons</Button>
         </div>
     )
 }
