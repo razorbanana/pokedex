@@ -50,7 +50,7 @@ const PokemonPage:FC = () => {
                 </div>
                 {Object.keys(pokemon.cries).map((cry:string) => {
                     if (cry === "latest" || cry === "legacy") {
-                        return <AudioComponent key={cry} src={pokemon.cries[cry]} label={cry} />;
+                        return <AudioComponent key={pokemon.cries[cry]} src={pokemon.cries[cry]} label={cry} />;
                     }
                     return null;
                 })}
