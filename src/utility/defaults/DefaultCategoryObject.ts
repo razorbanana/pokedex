@@ -1,10 +1,10 @@
 import PokemonList from "../../components/views/pokemonList/PokemonList"
 import CategoryObject from "../../types/CategoryType"
 
-const DefaultCategoryObject = ():CategoryObject => {
+const DefaultCategoryObject = ():Required<CategoryObject> => {
     return {
             component: PokemonList,
-            icon: ""
+            icon: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
         }
 }
 

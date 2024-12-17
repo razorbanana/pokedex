@@ -1,0 +1,50 @@
+.SelectMenu-Background{
+    position: absolute;
+    top: 100px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--side-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SelectMenu{
+    background-color: var(--main-bg-color);
+    width: 50%;
+    padding: 30px;
+}
+
+.GroupContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.GroupLabel{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.GroupGridWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.jump {
+    grid-column: 1 / -1; 
+}
+
+.SelectMenuCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.SelectMenuCard:hover{
+    background-color: var(--side-bg-color);
+    color: var(--side-font-color)
+}

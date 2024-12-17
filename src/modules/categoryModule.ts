@@ -1,10 +1,11 @@
+import Abilities from "../components/views/abilities/Abilities";
 import General from "../components/views/general/General";
 import PokemonList from "../components/views/pokemonList/PokemonList";
 import CategoryObject from "../types/CategoryType";
 import DefaultCategory from "../utility/defaults/DefaultCategoryObject";
 
 interface CategoryModule {
-    getCategory: (name:Categories) => CategoryObject,
+    getCategory: (name:Categories) => Required<CategoryObject>,
     getCategories: () => Categories[]
 }
 
@@ -22,7 +23,7 @@ const CategoryModule:() => CategoryModule = () => {
             icon: ""
         },
         [Categories.ABILITIES]: {
-            component: General,
+            component: Abilities,
             icon: ""
         },
         [Categories.LIST]: {
@@ -31,7 +32,7 @@ const CategoryModule:() => CategoryModule = () => {
         }
     }
 
-    const getCategory = (name:Categories): CategoryObject => {
+    const getCategory = (name:Categories): Required<CategoryObject> => {
         const result = {
             ...categoryMap[name],
             ...DefaultCategory()

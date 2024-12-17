@@ -1,6 +1,7 @@
+import './body.css'
 import { FC, useEffect, useState } from "react"
-import observer, { EventNames } from "../observers/observer"
-import categoryModule, { Categories } from "../modules/categoryModule"
+import observer, { EventNames } from "../../observers/observer"
+import categoryModule, { Categories } from "../../modules/categoryModule"
 
 const Body:FC = () => {
     const [category, setCategory] = useState('general')
@@ -22,7 +23,7 @@ const Body:FC = () => {
         return categoryModule.getCategory(category as Categories).component
     }
     return (
-        <div>
+        <div className='Body'>
             Ill fix you some day
         </div>
     )

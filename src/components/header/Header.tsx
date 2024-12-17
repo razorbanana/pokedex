@@ -1,6 +1,6 @@
 import { FC } from "react"
 import PokemonSearch from "./PokemonSearch"
-import CategorySelect from "./CategorySelect"
+import CategorySelect from "./categorySelect/CategorySelect"
 import './header.css'
 
 const Header:FC = () => {

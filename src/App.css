@@ -1,9 +1,12 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
     --main-bg-color: white;
-    --loading-bg-color: gainsboro;
+    --main-border-color: grey;
+    --loading-bg-color: #dcdcdc;
     --side-bg-color: gainsboro;
     --side-border-color: grey;
+    --main-font-color: black;
+    --side-font-color: green;
 }
 
 .App{
