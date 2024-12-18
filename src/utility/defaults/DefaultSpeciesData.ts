@@ -5,7 +5,7 @@ const DefaultSpeciesData:() => SpeciesDataType = () => {
         capture_rate: 0,
         flavor_text_entries: [
             {
-                flavor_text: "Do you really think I have flavor text?",
+                flavor_text: "Choose me in list or using search input",
                 language: {
                     name: "en"
                 },

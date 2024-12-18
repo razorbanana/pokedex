@@ -1,7 +1,7 @@
 import "./App.css"
 import { useEffect } from 'react'
 import Body from './components/body/Body'
-import Footer from './components/Footer'
+import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import config from './config/config'
 import Discovery from './dev/Discovery'
@@ -12,6 +12,7 @@ function App() {
   useEffect(()=> {
     controller.fetchPokemons()
   }, [])
+
   if (config.DISCOVERY){
     return (
       <div className="App">

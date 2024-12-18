@@ -7,8 +7,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 12.5%;
     background-color: var(--side-bg-color);
+    color: var(--side-font-color)
 }
 
 .CategorySelect-Button{
@@ -21,5 +22,5 @@
 }
 
 .CategorySelect-Button:hover{
-    color: var(--side-font-color)
+    background-color: var(--side-bg-color)
 }

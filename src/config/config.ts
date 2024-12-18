@@ -9,7 +9,9 @@ interface Config {
     POKEMON_LIST_LIMIT: number,
     ERROR_SLIDER_TIMEOUT: number,
     POKEMON_LIST_SHOW_LIMIT: number,
-    LOADING_ICON_URL: string
+    LOADING_ICON_URL: string,
+    FOOTER_GMAIL:string,
+    FOOTER_GITHUB: string,
 }
 
 export enum InputTypes {
@@ -29,7 +31,9 @@ const Config = function():Config{
         POKEMON_LIST_LIMIT: import.meta.env.VITE_POKEMON_LIST_LIMIT || 20,
         ERROR_SLIDER_TIMEOUT: 2500,
         POKEMON_LIST_SHOW_LIMIT: 20,
-        LOADING_ICON_URL: "./loading.svg"
+        LOADING_ICON_URL: "./loading.svg",
+        FOOTER_GMAIL: import.meta.env.VITE_FOOTER_GMAIL || "there are no gmail",
+        FOOTER_GITHUB: import.meta.env.VITE_FOOTER_GITHUB || "",
     }   
 }
 

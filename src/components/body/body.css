@@ -1,4 +1,7 @@
 .Body{
     margin-top: 200px;
+    margin-bottom: 20px;
     width: 100%;
+    min-height: 75%;
+    flex: 1; 
 }

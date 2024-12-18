@@ -3,13 +3,20 @@
     --main-bg-color: white;
     --main-border-color: grey;
     --loading-bg-color: #dcdcdc;
-    --side-bg-color: gainsboro;
+    --side-bg-color: white;
     --side-border-color: grey;
     --main-font-color: black;
     --side-font-color: green;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+
 .App{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
 }
