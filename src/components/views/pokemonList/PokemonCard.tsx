@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { getPokemonByName } from "../../../api/pokemonAPI";
 import observer, { EventNames } from '../../../observers/observer';
 import DefaultPokemonData from '../../../utility/defaults/DefaultPokemon';
-import PokemonData from '../../../types/PokemonDataType';
+import PokemonData from '../../../types/apiDataTypes/PokemonDataType';
 import PokemonTitle from "../../common/pokemonData/PokemonTitle";
 import PokemonImage from "../../common/pokemonData/PokemonImage";
 import { Categories } from "../../../modules/categoryModule";

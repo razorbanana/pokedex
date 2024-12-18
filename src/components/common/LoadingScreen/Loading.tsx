@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import "./Loading.css"
-import config from "../../config/config";
+import config from "../../../config/config";
 
 const Loading:FC = () => {
 

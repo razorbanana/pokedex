@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { getPokemonByName } from "../../api/pokemonAPI";
-import validatePokemon from "../../utility/pokemonValidation";
+import validatePokemon from "../../utility/helpers/pokemonValidation";
 
 const GetPokemonByNameButton:FC = () => {
     const [pokemon, setPokemon] = useState('')

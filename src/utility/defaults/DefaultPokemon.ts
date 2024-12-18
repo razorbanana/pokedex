@@ -1,4 +1,4 @@
-import PokemonData from "../../types/PokemonDataType"
+import PokemonData from "../../types/apiDataTypes/PokemonDataType"
 
 const DefaultPokemonData:() => PokemonData = () => {
     return {

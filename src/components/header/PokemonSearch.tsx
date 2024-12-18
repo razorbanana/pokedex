@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import Search from "../common/inputs/Search";
+import Search from "../common/inputs/Search/Search";
 import observer, { EventNames } from "../../observers/observer";
-import validatePokemon from "../../utility/pokemonValidation";
+import validatePokemon from "../../utility/helpers/pokemonValidation";
 
 const PokemonSearch:FC = () => {
     const [pokemonSearch, setPokemonSearch] = useState("")

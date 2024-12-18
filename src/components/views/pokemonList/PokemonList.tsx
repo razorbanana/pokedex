@@ -4,9 +4,9 @@ import config from "../../../config/config";
 import PokemonCard from "./PokemonCard";
 import observer, { EventNames } from "../../../observers/observer";
 import controller from "../../../controllers/controller";
-import PokemonInfo from "../../../types/PokemonInfoType";
-import Loading from "../../common/Loading";
-import Button from "../../common/button/Button";
+import PokemonInfo from "../../../types/apiDataTypes/PokemonInfoType";
+import Loading from "../../common/LoadingScreen/Loading";
+import Button from "../../common/buttons/Button";
 
 const PokemonList:FC = () => {
     const [numberToShow, setNumber] = useState(config.POKEMON_LIST_SHOW_LIMIT)

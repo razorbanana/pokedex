@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import "./ErrorSlider.css"
-import observer, { EventNames } from "../../observers/observer";
-import config from "../../config/config";
+import observer, { EventNames } from "../../../observers/observer";
+import config from "../../../config/config";
 
 const ErrorSlider:FC = () => {
     const [error, setError] = useState("")

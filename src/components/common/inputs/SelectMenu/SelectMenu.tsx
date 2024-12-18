@@ -12,7 +12,7 @@ const SelectMenu: FC<{options:SelectMenuOptionsType[]}> = ({options}) => {
                         <div key={index} className='GroupContainer'>
                             <div className='GroupLabel'>{group.label}</div>
                             <div className='GroupGridWrapper'>
-                                {group.group.map(option => <SelectMenuCard label={option.label} icon={option.icon} key={option.label} onClick={option.onClick}/>)}
+                                {group.group.map(option => <SelectMenuCard option={option} key={option.label}/>)}
                             </div>
                             <div className='jump'></div>
                         </div>

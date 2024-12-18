@@ -1,8 +1,8 @@
 import { fetchPokemonNameList, getPokemonByName, getSpeciesByName } from "../api/pokemonAPI"
 import observer, { EventNames } from "../observers/observer"
-import PokemonDataType from "../types/PokemonDataType"
-import PokemonInfo from "../types/PokemonInfoType"
-import SpeciesDataType from "../types/SpeciesDataType"
+import PokemonDataType from "../types/apiDataTypes/PokemonDataType"
+import PokemonInfo from "../types/apiDataTypes/PokemonInfoType"
+import SpeciesDataType from "../types/apiDataTypes/SpeciesDataType"
 import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
 import DefaultSpeciesData from "../utility/defaults/DefaultSpeciesData"
 

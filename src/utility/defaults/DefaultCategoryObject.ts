@@ -1,5 +1,5 @@
 import PokemonList from "../../components/views/pokemonList/PokemonList"
-import CategoryObject from "../../types/CategoryType"
+import CategoryObject from "../../types/moduleObjectsTypes/CategoryObjectType"
 
 const DefaultCategoryObject = ():Required<CategoryObject> => {
     return {

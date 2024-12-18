@@ -2,7 +2,7 @@ import { FC } from "react";
 import GetPokemonsButton from "./GetPokemonsButton";
 import GetPokemonByNameButton from "./GetPokemonByNameButton";
 import ProduceErrorButton from "./ProduceErrorButton";
-import TempLoading from "../TempLoading";
+import TempLoading from "./TempLoading";
 
 const SillyButtons:FC = () => {
     return (

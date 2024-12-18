@@ -1,10 +1,8 @@
+import SelectMenuOptionType from "./SelectMenuOptionType"
+
 type SelectMenuOptionsType = {
     label: string, 
-    group: {
-        label:string, 
-        icon: string,
-        onClick: () => void
-    }[]
+    group: SelectMenuOptionType[]
 }
 
 export default SelectMenuOptionsType

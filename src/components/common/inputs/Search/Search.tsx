@@ -1,5 +1,5 @@
 import { FC } from "react"
-import './inputs.css'
+import './Search.css'
 
 const Search:FC<{value: string, onChange:React.ChangeEventHandler<HTMLInputElement>, onSubmit: ()=>void}> = ({value, onChange, onSubmit}) => {
     return (

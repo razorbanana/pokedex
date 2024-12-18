@@ -1,4 +1,4 @@
-import SpeciesDataType from "../../types/SpeciesDataType";
+import SpeciesDataType from "../../types/apiDataTypes/SpeciesDataType";
 
 const DefaultSpeciesData:() => SpeciesDataType = () => {
     return {

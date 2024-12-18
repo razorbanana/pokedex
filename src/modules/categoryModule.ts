@@ -1,7 +1,7 @@
 import Abilities from "../components/views/abilities/Abilities";
 import General from "../components/views/general/General";
 import PokemonList from "../components/views/pokemonList/PokemonList";
-import CategoryObject from "../types/CategoryType";
+import CategoryObject from "../types/moduleObjectsTypes/CategoryObjectType";
 import DefaultCategory from "../utility/defaults/DefaultCategoryObject";
 
 interface CategoryModule {

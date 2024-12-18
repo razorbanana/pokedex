@@ -1,7 +1,7 @@
 import { Categories } from "../modules/categoryModule"
-import PokemonData from "../types/PokemonDataType"
-import PokemonInfo from "../types/PokemonInfoType"
-import SpeciesDataType from "../types/SpeciesDataType"
+import PokemonData from "../types/apiDataTypes/PokemonDataType"
+import PokemonInfo from "../types/apiDataTypes/PokemonInfoType"
+import SpeciesDataType from "../types/apiDataTypes/SpeciesDataType"
 
 interface Observer {
     subscribe: <E extends keyof Events>(name:E, action: Action<E>) => void,

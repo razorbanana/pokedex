@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../config/config";
 import pokemonCache from "../caches/pokemonCache";
-import GetRequestParams from "../types/GetRequestParamsType";
+import GetRequestParams from "../types/apiTypes/GetRequestParamsType";
 
 const axiosInstance = axios.create({
     baseURL: config.BASE_API_URL,

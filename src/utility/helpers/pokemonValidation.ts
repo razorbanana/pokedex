@@ -1,4 +1,4 @@
-import controller from "../controllers/controller"
+import controller from "../../controllers/controller"
 
 const validatePokemon = (name:string):boolean => {
     const pokemons = controller.getPokemons()

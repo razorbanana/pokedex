@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import Loading from "../components/common/Loading";
+import Loading from "../../components/common/LoadingScreen/Loading";
 
 const TempLoading:FC = () => {
     const [loading, setLoading] = useState(false)

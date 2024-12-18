@@ -1,10 +1,11 @@
 import { FC } from 'react';
+import SelectMenuOptionType from '../../../../types/componentPropsTypes/SelectMenuOptionType';
 
-const SelectMenuCard: FC<{label:string, icon?:string, onClick: ()=> void}> = ({label, icon, onClick}) => {
+const SelectMenuCard: FC<{option: SelectMenuOptionType}> = ({option}) => {
     return (
-        <div className='SelectMenuCard' onClick={onClick}>
-            <img src={icon}/>
-            <label>{label}</label>
+        <div className='SelectMenuCard' onClick={option.onClick}>
+            <img src={option.icon}/>
+            <label>{option.label}</label>
         </div>
     );
 };

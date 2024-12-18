@@ -7,7 +7,7 @@ import Body from "../components/body/Body"
 import General from "../components/views/general/General"
 import PokemonData from "../components/views/general/PokemonPage"
 import SillyButtons from "./sillybuttons/SillyButtons"
-import ErrorSlider from "../components/common/ErrorSlider"
+import ErrorSlider from "../components/common/ErrorSlider/ErrorSlider"
 import PokemonList from "../components/views/pokemonList/PokemonList"
 import PokemonRecap from "../components/views/pokemonList/PokemonCard"
 
