@@ -10,7 +10,17 @@ type PokemonData = {
     cries: {
         latest: string,
         legacy: string
-    }
+    },
+    abilities: [
+        {
+            ability: {
+                name: string,
+                url: string
+            },
+            is_hidden: boolean,
+            slot: number
+        }
+    ]
 }
 
 export default PokemonData

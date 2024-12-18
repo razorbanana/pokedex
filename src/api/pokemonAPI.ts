@@ -1,12 +1,14 @@
 import config from "../config/config"
 import logError from "../logging/logError"
 import observer, { EventNames } from "../observers/observer"
+import AbilityDataType from "../types/apiDataTypes/AbilityDataType"
 import PokemonData from "../types/apiDataTypes/PokemonDataType"
 import PokemonInfo from "../types/apiDataTypes/PokemonInfoType"
 import SpeciesDataType from "../types/apiDataTypes/SpeciesDataType"
-import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
+import DefaultAbilityData from "../utility/defaults/DefaultAbilityData"
+import DefaultPokemonData from "../utility/defaults/DefaultPokemonData"
 import DefaultSpeciesData from "../utility/defaults/DefaultSpeciesData"
-import { fetchGetRequest } from "./api"
+import { fetchGetRequest, fetchGetRequestByUrl } from "./api"
 
 export const getPokemonByName = async (name:string):Promise<PokemonData> => {
     try {  
@@ -27,6 +29,17 @@ export const getSpeciesByName = async (name:string):Promise<SpeciesDataType> => 
         logError(e)
         observer.emit(EventNames.SHOW_ERROR, "Fetching species is failed")
         return DefaultSpeciesData()
+    }
+}
+
+export const getAbilityByUrl = async (url:string):Promise<AbilityDataType> => {
+    try {  
+        const response = await fetchGetRequestByUrl(url)
+        return response as AbilityDataType
+    } catch (e: unknown) {
+        logError(e)
+        observer.emit(EventNames.SHOW_ERROR, "Fetching ability is failed")
+        return DefaultAbilityData()
     }
 }
 

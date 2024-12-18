@@ -3,7 +3,7 @@ import observer, { EventNames } from "../observers/observer"
 import PokemonDataType from "../types/apiDataTypes/PokemonDataType"
 import PokemonInfo from "../types/apiDataTypes/PokemonInfoType"
 import SpeciesDataType from "../types/apiDataTypes/SpeciesDataType"
-import DefaultPokemonData from "../utility/defaults/DefaultPokemon"
+import DefaultPokemonData from "../utility/defaults/DefaultPokemonData"
 import DefaultSpeciesData from "../utility/defaults/DefaultSpeciesData"
 
 
@@ -16,7 +16,8 @@ type Model = {
 export enum ModelKeys {
     POKEMON = 'pokemon',
     POKEMONS = 'pokemons',
-    SPECIES = 'species'
+    SPECIES = 'species',
+    ABILITIES = 'abilities'
 }
 
 type ModelData = {

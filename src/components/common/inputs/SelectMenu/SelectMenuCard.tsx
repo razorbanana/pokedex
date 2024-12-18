@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import SelectMenuOptionType from '../../../../types/componentPropsTypes/SelectMenuOptionType';
+import SelectMenuOptionType from '../../../../types/componentPropsTypes/SelectMenu/SelectMenuOptionType';
 
 const SelectMenuCard: FC<{option: SelectMenuOptionType}> = ({option}) => {
     return (

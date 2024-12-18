@@ -1,0 +1,17 @@
+.TableContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.TableTitle{
+    font-size: 20px;
+}
+
+.TableSubTitle{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+

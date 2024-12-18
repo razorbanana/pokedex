@@ -1,4 +1,4 @@
-import VersionObjectType from "../../types/VersionObjectType"
+import VersionObjectType from "../../types/moduleObjectsTypes/VersionObjectType"
 
 const DefaultVersionObject = ():Required<VersionObjectType> => {
     return {

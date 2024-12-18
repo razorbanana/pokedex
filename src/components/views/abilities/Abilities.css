@@ -1,0 +1,20 @@
+.AbilitiesPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.LayoutWrapper{
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.LayoutWrapper>div{
+    margin: 20px;
+}

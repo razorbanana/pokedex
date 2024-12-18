@@ -6,6 +6,7 @@ interface Config {
     POKEMON_CACHE_NAME: string,
     POKEMON_ENDPOINT: string,
     SPECIES_ENDPOINT: string,
+    ABILITY_ENDPOINT: string,
     POKEMON_LIST_LIMIT: number,
     ERROR_SLIDER_TIMEOUT: number,
     POKEMON_LIST_SHOW_LIMIT: number,
@@ -34,6 +35,7 @@ const Config = function():Config{
         LOADING_ICON_URL: "./loading.svg",
         FOOTER_GMAIL: import.meta.env.VITE_FOOTER_GMAIL || "there are no gmail",
         FOOTER_GITHUB: import.meta.env.VITE_FOOTER_GITHUB || "",
+        ABILITY_ENDPOINT: import.meta.env.VITE_ABILITY_ENDPOINT,
     }   
 }
 

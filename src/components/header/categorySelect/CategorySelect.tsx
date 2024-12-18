@@ -3,7 +3,7 @@ import categoryModule, { Categories } from "../../../modules/categoryModule";
 import observer, { EventNames } from "../../../observers/observer";
 import DefaultCategoryChoice from "../../../utility/defaults/DefaultCategoryChoice";
 import SelectMenu from "../../common/inputs/SelectMenu/SelectMenu";
-import SelectMenuOptionsType from "../../../types/componentPropsTypes/SelectMenuOptionsType";
+import SelectMenuOptionsType from "../../../types/componentPropsTypes/SelectMenu/SelectMenuOptionsType";
 import DefaultVersionObject from "../../../utility/defaults/DefaultVersionObject";
 
 const CategorySelect:FC = () => {
