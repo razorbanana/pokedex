@@ -1,12 +1,13 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
     --main-bg-color: white;
-    --main-border-color: grey;
-    --loading-bg-color: #dcdcdc;
-    --side-bg-color: white;
-    --side-border-color: grey;
+    --main-border-color: #d3d3d3;
+    --loading-bg-color: #d3d3d3;
+    --side-bg-color: #d3d3d3;
+    --side-border-color: #d3d3d3;
     --main-font-color: black;
     --side-font-color: green;
+
 }
 
 html, body {

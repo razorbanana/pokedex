@@ -14,4 +14,19 @@
     margin-bottom: 20px;
 }
 
+.Table{
+    border-spacing: 0;
+    width: 100%;
+    border: 1px var(--main-border-color) solid
+}
 
+.Table th{
+    border: 0;
+    background-color: var(--side-bg-color);
+    padding: 20px 15px;
+}
+
+.Table td{
+    border-top: 1px var(--main-border-color) solid;
+    padding: 20px 15px;
+}
