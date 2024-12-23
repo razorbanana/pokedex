@@ -1,13 +1,15 @@
+import SortCallbackType from "../../functionTypes/SortCallbackType";
+
 type BaseColumnType<T> = {
     title: string;
     type: string;
-    data: (T | undefined)[];
-    sortCallback: (a: T, b: T) => 1 | -1;
+    key: keyof T;
+    sortCallback?: SortCallbackType<T[keyof T]>
 };
 
-type TableColumnType =
-    | BaseColumnType<number> & { type: "number" }
-    | BaseColumnType<string> & { type: "string" }
-    | BaseColumnType<string> & { type: "icon" };
+type TableColumnType<T> =
+    | BaseColumnType<T> & { type: "number" }
+    | BaseColumnType<T> & { type: "string" }
+    | BaseColumnType<T> & { type: "icon" };
 
 export default TableColumnType

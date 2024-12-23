@@ -26,6 +26,17 @@
     padding: 20px 15px;
 }
 
+.SortButton{
+    border: 0;
+    background-color: var(--side-bg-color);
+    cursor: pointer;
+}
+
+.SortIcon{
+    width: 15px;
+    height: 15px;
+}
+
 .Table td{
     border-top: 1px var(--main-border-color) solid;
     padding: 20px 15px;

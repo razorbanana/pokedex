@@ -1,4 +1,5 @@
 import { Categories } from "../modules/categoryModule"
+import AbilityDataType from "../types/apiDataTypes/AbilityDataType"
 import PokemonData from "../types/apiDataTypes/PokemonDataType"
 import PokemonInfo from "../types/apiDataTypes/PokemonInfoType"
 import SpeciesDataType from "../types/apiDataTypes/SpeciesDataType"
@@ -10,12 +11,14 @@ interface Observer {
 }
 
 export enum EventNames {
-  UPDATE_CATEGORY= 'update_category',
-  UPDATE_POKEMON= 'update_pokemon',
-  SEARCH_POKEMON= 'search_pokemon',
-  SHOW_ERROR= 'show_error',
-  POKEMON_LIST_FETCHED= 'pokemon_list_fetched',
-  UPDATE_SPECIES= 'update_species'
+    UPDATE_CATEGORY= 'update_category',
+    UPDATE_POKEMON= 'update_pokemon',
+    SEARCH_POKEMON= 'search_pokemon',
+    SHOW_ERROR= 'show_error',
+    POKEMON_LIST_FETCHED= 'pokemon_list_fetched',
+    UPDATE_SPECIES= 'update_species',
+    FETCH_ABILITIES= 'fetch_abilities',
+    ABILITTIES_FETCHED='abilities_fetched'
 }
 
 type Events = {
@@ -25,6 +28,9 @@ type Events = {
     [EventNames.SHOW_ERROR]: string,
     [EventNames.POKEMON_LIST_FETCHED]: PokemonInfo[],
     [EventNames.UPDATE_SPECIES]: SpeciesDataType,
+    [EventNames.ABILITTIES_FETCHED]: AbilityDataType[],
+    [EventNames.FETCH_ABILITIES]: void,
+
 }
 
 type Action<E extends keyof Events> = (data?: Events[E]) => void
